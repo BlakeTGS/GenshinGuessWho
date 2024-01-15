@@ -51,7 +51,7 @@
             font-size: 16px;
             cursor: pointer;
         }
-    
+
     #titleImage {
         width: 150px;
         height: auto;
@@ -69,88 +69,88 @@
     <button id="resetButton">Reset</button>
 
     <script>
-        const imageUrls = [
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/35/Aether_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Albedo_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/e5/Alhaitham_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/13/Aloy_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/2/2a/Amber_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/71/Arataki_Itto_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/6/63/Baizhu_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Barbara_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/6/6f/Beidou_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Bennett_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Candace_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/c/cd/Charlotte_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Chevreuse_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Chongyun_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/03/Collei_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/38/Cyno_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/79/Dehya_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/8/82/Diluc_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/a/aa/Diona_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Dori_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/7c/Eula_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/32/Faruzan_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/e8/Fischl_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/2/24/Freminet_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/07/Furina_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Ganyu_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/1e/Gorou_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d3/Hu_Tao_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/e7/Jean_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/18/Kaedehara_Kazuha_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/de/Kaeya_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Kamisato_Ayaka_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/14/Kamisato_Ayato_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/8/81/Kaveh_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Keqing_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/74/Kirara_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/78/Klee_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/9/91/Kujou_Sara_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Kuki_Shinobu_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/2/21/Layla_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/51/Lisa_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/14/Lumine_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/53/Lynette_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d8/Lyney_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/5c/Mika_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/03/Mona_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/a/ab/Nahida_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Navia_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/35/Neuvillette_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Nilou_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Ningguang_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/5b/Noelle_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Qiqi_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/bc/Raiden_Shogun_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Razor_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Rosaria_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/34/Sangonomiya_Kokomi_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/2/25/Sayu_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/4/44/Shenhe_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Shikanoin_Heizou_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/2/2d/Sucrose_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/d/d5/Tartaglia_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/a/a9/Thoma_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Tighnari_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/58/Venti_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Wanderer_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/f/fb/Wriothesley_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/f/ff/Xiangling_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/1/11/Xiao_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/52/Xingqiu_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/5/59/Xinyan_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/7/77/Yae_Miko_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/bf/Yanfei_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/c/c2/Yaoyao_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Yelan_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/b4/Yoimiya_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/3/30/Yun_Jin_Item.png',
-          'https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Zhongli_Item.png',
-        ];
+    const imageUrls = [
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/35/Aether_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Albedo_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/e5/Alhaitham_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/13/Aloy_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/2/2a/Amber_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/71/Arataki_Itto_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/6/63/Baizhu_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Barbara_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/6/6f/Beidou_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Bennett_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Candace_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/c/cd/Charlotte_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Chevreuse_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Chongyun_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/03/Collei_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/38/Cyno_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/79/Dehya_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/8/82/Diluc_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/a/aa/Diona_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Dori_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/7c/Eula_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/32/Faruzan_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/e8/Fischl_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/2/24/Freminet_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/07/Furina_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Ganyu_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/1e/Gorou_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d3/Hu_Tao_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/e7/Jean_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/18/Kaedehara_Kazuha_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/de/Kaeya_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Kamisato_Ayaka_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/14/Kamisato_Ayato_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/8/81/Kaveh_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Keqing_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/74/Kirara_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/78/Klee_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/9/91/Kujou_Sara_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Kuki_Shinobu_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/2/21/Layla_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/51/Lisa_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/14/Lumine_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/53/Lynette_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d8/Lyney_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/5c/Mika_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/03/Mona_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/a/ab/Nahida_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Navia_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/35/Neuvillette_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Nilou_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Ningguang_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/5b/Noelle_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Qiqi_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/bc/Raiden_Shogun_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Razor_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Rosaria_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/34/Sangonomiya_Kokomi_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/2/25/Sayu_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/4/44/Shenhe_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Shikanoin_Heizou_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/2/2d/Sucrose_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/d/d5/Tartaglia_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/a/a9/Thoma_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Tighnari_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/58/Venti_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Wanderer_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/f/fb/Wriothesley_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/f/ff/Xiangling_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/1/11/Xiao_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/52/Xingqiu_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/5/59/Xinyan_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/7/77/Yae_Miko_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/bf/Yanfei_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/c/c2/Yaoyao_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Yelan_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/b4/Yoimiya_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/3/30/Yun_Jin_Item.png',
+      'https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Zhongli_Item.png',
+    ];
 
-        const imageGrid = document.getElementById('imageGrid');
+      const imageGrid = document.getElementById('imageGrid');
         let currentGoldBorderImage = null;
 
         imageUrls.forEach(url => {
@@ -191,19 +191,19 @@
             });
             currentGoldBorderImage = null;
         }
-    
-    // Detect double tap
-    let lastTap = 0;
+
+    // Function to handle double tap on mobile
+    function handleDoubleTap(img) {
+        if (!img.lastTap || (new Date() - img.lastTap) > 300) {
+            img.lastTap = new Date();
+        } else {
+            toggleGoldBorder(img); // Call the existing function to toggle gold border
+        }
+    }
+
+    // Attach the double-tap event to each image
     document.querySelectorAll('.image-item').forEach(img => {
-        img.addEventListener('touchend', (e) => {
-            const currentTime = new Date().getTime();
-            const tapLength = currentTime - lastTap;
-            if (tapLength < 500 && tapLength > 0) {
-                toggleGoldBorder(img); // Call the existing function to add/remove gold border
-                e.preventDefault();
-            }
-            lastTap = currentTime;
-        });
+        img.addEventListener('touchend', () => handleDoubleTap(img));
     });
 </script>
 </body>
